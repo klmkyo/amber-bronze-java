@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.wieik.amberbronze.controller.dialog.NewTransferController"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            minWidth="300"
+            minHeight="400"
+            style="-fx-padding: 10;">
+
+    <VBox fx:id="selectPaymentView" spacing="10" VBox.vgrow="NEVER" maxWidth="Infinity"
+          alignment="CENTER"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0">
+        <Label text="Wybierz typ płatności:"/>
+        <ChoiceBox fx:id="paymentTypeChoiceBox" value="BLIK" prefWidth="120.0" VBox.vgrow="NEVER">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="BLIK"/>
+                    <String fx:value="Karta kredytowa"/>
+                    <String fx:value="Wpłata"/>
+                    <String fx:value="Wypłata"/>
+                </FXCollections>
+
+            </items>
+        </ChoiceBox>
+        <Button text="Wybierz" onAction="#handleTransactionButtonAction"/>
+    </VBox>
+    <VBox fx:id="transferViews" managed="false" visible="false" maxWidth="Infinity"
+          alignment="CENTER"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          style="-fx-padding: 10;"
+    >
+        <VBox fx:id="blikTransferView" managed="false" visible="false" spacing="10" VBox.vgrow="NEVER" alignment="CENTER">
+            <Label text="Numer telefonu:"/>
+            <TextField id="telephoneNumber" promptText="Numer karty"/>
+            <Label text="Tytuł przelewu:"/>
+            <TextField id="title" promptText="Za obraz..."/>
+            <Label text="Kwota: "/>
+            <TextField id="amount" promptText="100.00"/>
+        </VBox>
+
+        <VBox fx:id="directTransferView" managed="false" visible="false" spacing="10" VBox.vgrow="NEVER" alignment="CENTER">
+            <Label text="Tytuł przelewu:"/>
+            <TextField id="title" promptText="Za obraz..."/>
+            <Label text="Numer rachunku odbiorcy: "/>
+            <TextField id="cardNumber" promptText="Numer karty"/>
+            <Label text="Dane osobowe odbiorcy: "/>
+            <TextField id="reciverName" promptText="Imie i nazwisko"/>
+            <Label text="Kwota: "/>
+            <TextField id="amount" promptText="100.00"/>
+        </VBox>
+
+        <VBox fx:id="creditCardTransferView" managed="false" visible="false" spacing="10" VBox.vgrow="NEVER" alignment="CENTER">
+            <Label text="Tytuł przelewu:"/>
+            <TextField id="title" promptText="Za obraz..."/>
+            <Label text="Numer karty kredytowej odbiorcy: "/>
+            <TextField id="cardNumber" promptText="Numer karty"/>
+            <Label text="Dane osobowe odbiorcy: "/>
+            <TextField id="reciverName" promptText="Imie i nazwisko"/>
+            <Label text="Kwota: "/>
+            <TextField id="amount" promptText="100.00"/>
+        </VBox>
+
+        <VBox fx:id="depositTransferView" managed="false" visible="false" spacing="10" VBox.vgrow="NEVER" alignment="CENTER">
+            <Label text="Numer karty kredytowej: "/>
+            <TextField id="cardNumber" promptText="Numer karty"/>
+            <Label text="Kwota: "/>
+            <TextField id="amount" promptText="100.00"/>
+            <Label text="Pin do karty: "/>
+            <TextField id="pin" promptText="1234"/>
+        </VBox>
+
+
+        <VBox fx:id="withdrawalTransferView" managed="false" visible="false" spacing="10" VBox.vgrow="NEVER" alignment="CENTER">
+            <Label text="Numer karty kredytowej: "/>
+            <TextField id="cardNumber" promptText="Numer karty"/>
+            <Label text="Kwota: "/>
+            <TextField id="amount" promptText="100.00"/>
+            <Label text="Pin do karty: "/>
+            <TextField id="pin" promptText="1234"/>
+        </VBox>
+
+        <Label fx:id="messageLabel" managed="false" visible="false"/>
+
+        <HBox style="-fx-padding: 7;" alignment="CENTER">
+        <Button onAction="#sendAction"
+        style="-fx-padding: 7;"
+        >Wyslij</Button>
+        </HBox>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.wieik.amberbronze.controller.dialog.NewAccountController"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            minWidth="300"
+            minHeight="400"
+            style="-fx-padding: 10;">
+    <VBox maxWidth="Infinity"
+          alignment="CENTER"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          style="-fx-padding: 10;"
+          spacing="10"
+    >
+        <Label text="Nazwa konta:"/>
+        <TextField fx:id="accountName" id="accountName" promptText="Oszczędności"/>
+
+        <Button text="Załóż konto" onAction="#handleNewAccountButtonAction"/>
+    </VBox>
+</AnchorPane>

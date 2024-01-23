@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.wieik.amberbronze.controller.DashboardController">
+    <VBox spacing="10" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+          AnchorPane.topAnchor="0" style="-fx-padding: 10;">
+        <Label fx:id="greetingLabel" text="Witaj, Marcin!" style="-fx-font-weight: bold; -fx-font-size: 20;"
+               VBox.vgrow="NEVER"/>
+
+        <HBox spacing="10" VBox.vgrow="ALWAYS">
+            <VBox spacing="5" style="-fx-border-color: black; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                <Label text="Twoje Rachunki" style="-fx-font-weight: bold;"/>
+                <VBox fx:id="accountList" spacing="5" style="-fx-padding: 10;" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"/>
+                <Button text="Nowy Rachunek" style="-fx-max-width: Infinity;" onAction="#handleNewAccountButtonAction"/>
+            </VBox>
+
+            <VBox spacing="5" style="-fx-border-color: black; -fx-padding: 10;" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                <HBox spacing="10" VBox.vgrow="NEVER" HBox.hgrow="ALWAYS">
+                    <GridPane hgap="10" vgap="5">
+                        <Label text="Nazwa konta" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-family: 'Arial'; -fx-font-weight: bold;"/>
+                        <Label fx:id="accountNameLabel" text="Oszczędności" GridPane.rowIndex="1"
+                               GridPane.columnIndex="0"/>
+                        <Label text="Saldo" GridPane.rowIndex="0" GridPane.columnIndex="1" style="-fx-font-family: 'Arial'; -fx-font-weight: bold;"/>
+                        <Label fx:id="balanceLabel" text="1200.00" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Label text="Numer telefonu" GridPane.rowIndex="0" GridPane.columnIndex="2" style="-fx-font-family: 'Arial'; -fx-font-weight: bold;"/>
+                        <Label fx:id="phoneNumberLabel" text="126282070" GridPane.rowIndex="1"
+                               GridPane.columnIndex="2"/>
+                    </GridPane>
+
+                    <Region HBox.hgrow="ALWAYS" />
+
+                    <Button text="Ustaw jako domyślne" fx:id="setDefaultAccountButton"/>
+                </HBox>
+
+                <Separator style="-fx-background-color: black; margin: 10 0 10 0;"/>
+
+                <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" fx:id="creditCardBox">
+                    <Label text="Numer Karty:" style="-fx-font-weight: bold; -fx-font-family: 'Arial';"/>
+                    <Label fx:id="creditCardNumberLabel" text="0000 0000 0000 0000"/>
+
+                    <Label text="Data ważności:" style="-fx-font-weight: bold; -fx-font-family: 'Arial';"/>
+                    <Label fx:id="creditCardExpirationDateLabel" text="MM/RR"/>
+
+                    <Label text="CVC:" style="-fx-font-weight: bold; -fx-font-family: 'Arial';"/>
+                    <Label fx:id="creditCardCvvLabel" text="123"/>
+
+                    <Label text="PIN:" style="-fx-font-weight: bold; -fx-font-family: 'Arial';"/>
+                    <Label fx:id="creditCardPinLabel" text="1234"/>
+                </VBox>
+
+                <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" fx:id="creditCardNoneBox">
+                    <Label text="Nie wybrano karty kredytowej" style="-fx-font-weight: bold;"/>
+                </VBox>
+
+
+                <Separator style="-fx-background-color: black; margin: 10 0 10 0;"/>
+
+                <VBox>
+                    <Label text="Karty kredytowe:" style="-fx-font-weight: bold;-fx-font-family: 'Arial';"/>
+                    <VBox fx:id="creditCardList" spacing="5" style="-fx-padding: 10;" HBox.hgrow="ALWAYS"/>
+                    <Button text="Nowa Karta Kredytowa" style="-fx-max-width: Infinity;"
+                            onAction="#handleNewCreditCardButtonAction"/>
+                </VBox>
+            </VBox>
+
+            <VBox style="-fx-border-color: black; -fx-padding: 10;" HBox.hgrow="ALWAYS" spacing="5">
+                <VBox fx:id="transferList" spacing="5" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                    <Label text="Nie masz jeszcze żadnych transakcji!" style="-fx-font-weight: bold;"/>
+
+                </VBox>
+
+                <VBox spacing="5" alignment="BOTTOM_CENTER">
+                    <Button text="Generuj raport z dzisiaj" style="-fx-max-width: Infinity;"
+                            onAction="#handleGenerateReportButtonAction"/>
+                    <Button text="Odczytaj raport z pliku" style="-fx-max-width: Infinity;"
+                            onAction="#handleReadReportButtonAction"/>
+                </VBox>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="10" VBox.vgrow="NEVER" alignment="CENTER_RIGHT">
+            <Button text="Wykonaj Transfer" style="-fx-max-width: Infinity;" onAction="#handleTransferButtonAction"/>
+            <Button text="Wyloguj" style="-fx-max-width: Infinity;" onAction="#handleLogoutButtonAction"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

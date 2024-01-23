@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.wieik.amberbronze.controller.dialog.NewCreditCardController"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            minWidth="300"
+            minHeight="400"
+            style="-fx-padding: 10;">
+    <VBox maxWidth="Infinity"
+          alignment="CENTER"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          style="-fx-padding: 10;"
+          spacing="10"
+    >
+        <VBox spacing="10" VBox.vgrow="NEVER" alignment="CENTER">
+            <Label text="Numer karty"/>
+            <TextField fx:id="cardNumber" disable="true"/>
+            <Label text="Data ważności"/>
+            <TextField fx:id="expirationDate" promptText="MM/RR" disable="true"/>
+            <Label text="CVC"/>
+            <TextField fx:id="cvc" promptText="123" disable="true"/>
+            <Label text="PIN"/>
+            <TextField fx:id="pin" promptText="1234"/>
+        </VBox>
+
+        <Button text="Utwórz Kartę" onAction="#handleCreateNewCredditCard"/>
+        <Label managed="false" visible="false" fx:id="messageLabel"/>
+    </VBox>
+</AnchorPane>

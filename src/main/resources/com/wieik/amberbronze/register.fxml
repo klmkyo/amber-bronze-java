@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.control.Hyperlink?>
+<AnchorPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="com.wieik.amberbronze.controller.RegisterController">
+    <HBox
+            maxWidth="Infinity"
+            alignment="CENTER"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0">
+        <VBox spacing="10" alignment="CENTER" maxWidth="200">
+
+            <Label text="Register"/>
+            <TextField fx:id="name" promptText="Name"/>
+            <TextField fx:id="phoneNumber" promptText="Phone number"/>
+
+            <PasswordField fx:id="password" promptText="Password"/>
+            <PasswordField fx:id="password2" promptText="Repeat password"/>
+
+            <Label managed="false" visible="false" fx:id="messageLabel"/>
+            <VBox spacing="6" alignment="CENTER">
+                <Button text="Register" onAction="#handleRegisterButtonAction"/>
+                <Hyperlink text="Return" onAction="#handleReturnAction"/>
+            </VBox>
+        </VBox>
+    </HBox>
+</AnchorPane>
+
